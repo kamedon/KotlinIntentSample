@@ -19,7 +19,7 @@ enum class Page(val nameId: Int, val page: Class<out Activity>) {
         }
     },
     SECOND(R.string.page_second, SecondActivity::class.java),
-    THIRD(R.string.page_second, ThirdActivity::class.java);
+    THIRD(R.string.page_third, ThirdActivity::class.java);
 
     inline fun intent(context: Context, f: (intent: Intent) -> Intent) = init(Intent(context, page)).apply { f(this) }
     inline fun intent(context: Context) = init(Intent(context, page))
