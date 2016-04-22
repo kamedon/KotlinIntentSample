@@ -14,9 +14,7 @@ import com.kamedon.kotlinintentsample.ThirdActivity
  */
 enum class Page(val nameId: Int, val page: Class<out Activity>) {
     MAIN(R.string.page_main, MainActivity::class.java) {
-        override fun intent(context: Context): Intent {
-            return super.intent(context).apply { addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)  }
-        }
+        override fun intent(context: Context): Intent = super.intent(context).apply { addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP) }
     },
     SECOND(R.string.page_second, SecondActivity::class.java),
     THIRD(R.string.page_third, ThirdActivity::class.java);
