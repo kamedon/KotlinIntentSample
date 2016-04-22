@@ -7,6 +7,7 @@ import android.content.res.Resources
 import com.kamedon.kotlinintentsample.MainActivity
 import com.kamedon.kotlinintentsample.R
 import com.kamedon.kotlinintentsample.SecondActivity
+import com.kamedon.kotlinintentsample.ThirdActivity
 
 /**
  * Created by h_kamei on 2016/04/22.
@@ -17,7 +18,8 @@ enum class Page(val nameId: Int, val page: Class<out Activity>) {
             return super.init(intent).apply { addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP) }
         }
     },
-    SECOND(R.string.page_second, SecondActivity::class.java);
+    SECOND(R.string.page_second, SecondActivity::class.java),
+    THIRD(R.string.page_second, ThirdActivity::class.java);
 
     inline fun intent(context: Context, f: (intent: Intent) -> Intent) = init(Intent(context, page)).apply { f(this) }
     inline fun intent(context: Context) = init(Intent(context, page))

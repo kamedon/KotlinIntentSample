@@ -3,4 +3,5 @@
     <string name="page_main">MainActivity</string>
     <string name="page_second">SecondActivity</string>
     <string name="go">go %1$s</string>
+    <string name="page_third">page_thid</string>
 </resources>
