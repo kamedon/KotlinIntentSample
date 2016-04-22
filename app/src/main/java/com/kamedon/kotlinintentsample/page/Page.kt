@@ -14,17 +14,14 @@ import com.kamedon.kotlinintentsample.ThirdActivity
  */
 enum class Page(val nameId: Int, val page: Class<out Activity>) {
     MAIN(R.string.page_main, MainActivity::class.java) {
-        override fun init(intent: Intent): Intent {
-            return super.init(intent).apply { addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP) }
+        override fun intent(context: Context): Intent {
+            return super.intent(context).apply { addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)  }
         }
     },
     SECOND(R.string.page_second, SecondActivity::class.java),
     THIRD(R.string.page_third, ThirdActivity::class.java);
 
-    inline fun intent(context: Context, f: (intent: Intent) -> Intent) = init(Intent(context, page)).apply { f(this) }
-    inline fun intent(context: Context) = init(Intent(context, page))
-
-    open fun init(intent: Intent) = intent
+    open fun intent(context: Context) = Intent(context, page)
     fun name(resources: Resources) = resources.getString(nameId)
 
 }
