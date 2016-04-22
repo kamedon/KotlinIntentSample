@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">KotlinIntentSample</string>
-    <string name="page_main">MainActivity</string>
-    <string name="page_second">SecondActivity</string>
+    <string name="page_main">Main PAGE</string>
+    <string name="page_second">Secoct PAGE</string>
     <string name="go">go %1$s</string>
-    <string name="page_third">page_thid</string>
+    <string name="page_third">THIRD PAGE</string>
 </resources>
