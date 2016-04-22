@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        btnThird.text = getString(R.string.go, Page.SECOND.name(resources))
+        btnThird.text = getString(R.string.go, Page.THIRD.name(resources))
         btnThird.setOnClickListener {
             //ノーマルな遷移
             go(Page.THIRD)
@@ -36,8 +36,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        intent?.extras?.getString("msg").let{
-            Toast.makeText(applicationContext,it,Toast.LENGTH_SHORT).show()
+        intent?.extras?.getString("msg", null)?.let {
+            Toast.makeText(applicationContext, it, Toast.LENGTH_SHORT).show()
         }
     }
 }
