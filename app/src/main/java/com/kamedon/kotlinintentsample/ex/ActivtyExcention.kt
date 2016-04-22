@@ -9,8 +9,6 @@ import com.kamedon.kotlinintentsample.page.Page
  */
 
 
-inline fun Activity.go(page: Page, f: (intent: Intent) -> Intent) = startActivity(page.intent(applicationContext).apply {
-    f(this)
-})
+inline fun Activity.go(page: Page, f: (intent: Intent) -> Intent) = startActivity(f(page.intent(applicationContext)))
 
 fun Activity.go(page: Page) = startActivity(page.intent(applicationContext))
